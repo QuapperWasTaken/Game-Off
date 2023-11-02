@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgh2n2njl5e5b"]
 
 [ext_resource type="PackedScene" uid="uid://bef5gekxmt5eb" path="res://tower.tscn" id="1_tphqo"]
-[ext_resource type="PackedScene" uid="uid://bdir3vcbqya5u" path="res://enemy.tscn" id="2_rwdd1"]
+[ext_resource type="Script" path="res://spawner.gd" id="2_p7uqs"]
 
 [node name="main" type="Node2D"]
 
 [node name="Tower" parent="." instance=ExtResource("1_tphqo")]
 
-[node name="Enemy" parent="." instance=ExtResource("2_rwdd1")]
-position = Vector2(6.10352e-05, 8)
+[node name="spawner" type="Node2D" parent="."]
+script = ExtResource("2_p7uqs")
