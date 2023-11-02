@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdir3vcbqya5u"]
+
+[ext_resource type="Texture2D" uid="uid://o61c0bg81tr3" path="res://Assets/Art/Enemies/Chicken.png" id="1_hejlv"]
+[ext_resource type="Script" path="res://enemy.gd" id="2_udqql"]
+
+[node name="Enemy" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_hejlv")
+script = ExtResource("2_udqql")
