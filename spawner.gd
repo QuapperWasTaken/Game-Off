@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	counter += 1
 	if counter >= spawn_timer:
-		var enemy = preload("res://enemy.tscn").instantiate()
+		var enemy = preload("res://enemy.tscn").instantiate() #instantiate makes each enemy have a unique name
 		var tower_position_x = $"/root/main/Tower".position.x #fetches tower x position
 		var tower_position_y = $"/root/main/Tower".position.y #fetches tower y position
 		var mod_x = 1 #allows x spawn to also be from other side of tower

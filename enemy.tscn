@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdir3vcbqya5u"]
+[gd_scene load_steps=4 format=3 uid="uid://bdir3vcbqya5u"]
 
 [ext_resource type="Texture2D" uid="uid://o61c0bg81tr3" path="res://Assets/Art/Enemies/Chicken.png" id="1_hejlv"]
 [ext_resource type="Script" path="res://enemy.gd" id="2_udqql"]
 
-[node name="Enemy" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fk25w"]
+size = Vector2(400, 360)
+
+[node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_hejlv")
 script = ExtResource("2_udqql")
+
+[node name="Chicken" type="Sprite2D" parent="."]
+texture = ExtResource("1_hejlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.53674e-06, -9.53674e-06)
+shape = SubResource("RectangleShape2D_fk25w")
