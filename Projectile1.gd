@@ -24,4 +24,3 @@ func _on_hitbox_body_entered(body):
 	if body == target:
 		target.health -= damage
 		queue_free()
-	pass # Replace with function body.
