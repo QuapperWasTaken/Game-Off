@@ -28,5 +28,5 @@ shape = SubResource("RectangleShape2D_qb3rr")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerRange"]
 shape = SubResource("CircleShape2D_uemc3")
 
-[connection signal="body_entered" from="TowerRange" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="TowerRange" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="TowerRange" to="." method="_on_tower_range_body_entered"]
+[connection signal="body_exited" from="TowerRange" to="." method="_on_tower_range_body_exited"]

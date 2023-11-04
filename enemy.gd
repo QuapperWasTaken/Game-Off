@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var speed = 5
+var health = 10
+var type = "enemy"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,11 +10,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if position.x >= $"/root/main/Tower".position.x:
+	if global_position.x >= $"/root/main/Tower".global_position.x:
 		position.x -= speed
 	else:
 		position.x += speed
-	if position.y >= $"/root/main/Tower".position.y:
+	if global_position.y >= $"/root/main/Tower".global_position.y:
 		position.y -= speed
 	else:
 		position.y += speed
+	if health <= 0:
+		queue_free()
