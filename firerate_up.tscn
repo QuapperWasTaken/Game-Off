@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhf6akn2ji0vc"]
+
+[ext_resource type="Texture2D" uid="uid://g82ol1hvpw4n" path="res://Assets/Art/Buttons/FirerateUp.png" id="1_rhdhm"]
+
+[node name="FirerateUp" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Firerate Up"
+icon = ExtResource("1_rhdhm")

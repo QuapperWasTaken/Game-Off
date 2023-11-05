@@ -28,5 +28,6 @@ func _process(delta):
 		if $"AttackRange".overlaps_area($"/root/main/Tower/TowerHitbox") and attack_counter >= attack_rate:
 			$"/root/main/Tower".health -= damage
 			attack_counter = 0
+			speed = 0
 			print("tower health: ", $"/root/main/Tower".health)
 	

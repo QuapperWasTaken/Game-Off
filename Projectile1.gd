@@ -9,14 +9,17 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if global_position.x >= target.global_position.x:
-		position.x -= speed
+	if target == null:
+		queue_free()
 	else:
-		position.x += speed
-	if global_position.y >= target.global_position.y:
-		position.y -= speed
-	else:
-		position.y += speed
+		if global_position.x >= target.global_position.x:
+			position.x -= speed
+		else:
+			position.x += speed
+		if global_position.y >= target.global_position.y:
+			position.y -= speed
+		else:
+			position.y += speed
 	
 func _on_hitbox_body_entered(body):
 	if body == target:

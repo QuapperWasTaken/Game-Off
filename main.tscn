@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgh2n2njl5e5b"]
+[gd_scene load_steps=9 format=3 uid="uid://bgh2n2njl5e5b"]
 
 [ext_resource type="PackedScene" uid="uid://bef5gekxmt5eb" path="res://tower.tscn" id="1_tphqo"]
 [ext_resource type="Script" path="res://spawner.gd" id="2_p7uqs"]
 [ext_resource type="PackedScene" uid="uid://butju7kj4aqpg" path="res://damage_up.tscn" id="3_4dtk4"]
 [ext_resource type="Script" path="res://damage_up.gd" id="4_tl7a5"]
+[ext_resource type="PackedScene" uid="uid://dhf6akn2ji0vc" path="res://firerate_up.tscn" id="5_tl2d6"]
+[ext_resource type="Script" path="res://firerate_up.gd" id="6_dknf1"]
+[ext_resource type="PackedScene" uid="uid://d3kf2y42x0n4k" path="res://range_up.tscn" id="7_sksc3"]
+[ext_resource type="Script" path="res://range_up.gd" id="8_2wcmu"]
 
 [node name="main" type="Node2D"]
 
@@ -18,3 +22,17 @@ offset_top = 395.0
 offset_right = 258.0
 offset_bottom = 645.0
 script = ExtResource("4_tl7a5")
+
+[node name="FirerateUp" parent="." instance=ExtResource("5_tl2d6")]
+offset_left = 355.0
+offset_top = 396.0
+offset_right = 700.0
+offset_bottom = 646.0
+script = ExtResource("6_dknf1")
+
+[node name="RangeUp" parent="." instance=ExtResource("7_sksc3")]
+offset_left = 705.0
+offset_top = 394.0
+offset_right = 1037.0
+offset_bottom = 644.0
+script = ExtResource("8_2wcmu")

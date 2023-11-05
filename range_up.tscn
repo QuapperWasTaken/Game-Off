@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3kf2y42x0n4k"]
+
+[ext_resource type="Texture2D" uid="uid://bium08mr34mtk" path="res://Assets/Art/Buttons/RangeUp.png" id="1_blw8e"]
+
+[node name="RangeUp" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Range Up"
+icon = ExtResource("1_blw8e")

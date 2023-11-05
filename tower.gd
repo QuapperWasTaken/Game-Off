@@ -6,6 +6,8 @@ var target_list = [] #enemies added to this list dynamically
 var type = "tower"
 var currency = 0
 var damage_upgrades = 0
+var firerate_upgrades = -10
+var range_upgrades = 1.2
 var health = 10
 
 func _ready():
@@ -41,5 +43,12 @@ func _button_pressed(upgrade_button):
 	else:
 		currency -= upgrade_button.price
 		upgrade_button.price += 1
-		damage_upgrades += 1
-		print("damage upgrades:", damage_upgrades, ", money:", currency)
+		if upgrade_button.upgrade == "damage":
+			damage_upgrades += 1
+			print("damage upgrades: ", damage_upgrades, ", money:", currency)
+		if upgrade_button.upgrade == "firerate":
+			fire_rate += firerate_upgrades
+			print("firerate upgrades: ", fire_rate, ", money:", currency)
+		if upgrade_button.upgrade == "range":
+			$"TowerRange/CollisionShape2D2".shape.radius *= range_upgrades
+			print("range upgrades: ", $"TowerRange/CollisionShape2D2".shape.radius, ", money:", currency)
