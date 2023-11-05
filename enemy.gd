@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 5
 var health = 10
 var type = "enemy"
-var dead = false
+var currency_drop = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,5 +20,4 @@ func _process(delta):
 	else:
 		position.y += speed
 	if health <= 0:
-		dead = true
 		queue_free()

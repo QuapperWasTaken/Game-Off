@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://butju7kj4aqpg"]
+
+[ext_resource type="Texture2D" uid="uid://c8fgsign7clip" path="res://Assets/Art/Buttons/DamageUp.png" id="1_vhujo"]
+
+[sub_resource type="GDScript" id="GDScript_xe31l"]
+script/source = "extends Button
+
+"
+
+[node name="DamageUp" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Damage Up"
+icon = ExtResource("1_vhujo")
+script = SubResource("GDScript_xe31l")

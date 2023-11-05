@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgh2n2njl5e5b"]
+[gd_scene load_steps=5 format=3 uid="uid://bgh2n2njl5e5b"]
 
 [ext_resource type="PackedScene" uid="uid://bef5gekxmt5eb" path="res://tower.tscn" id="1_tphqo"]
 [ext_resource type="Script" path="res://spawner.gd" id="2_p7uqs"]
+[ext_resource type="PackedScene" uid="uid://butju7kj4aqpg" path="res://damage_up.tscn" id="3_4dtk4"]
+[ext_resource type="Script" path="res://damage_up.gd" id="4_tl7a5"]
 
 [node name="main" type="Node2D"]
 
@@ -9,3 +11,10 @@
 
 [node name="spawner" type="Node2D" parent="."]
 script = ExtResource("2_p7uqs")
+
+[node name="DamageUp" parent="." instance=ExtResource("3_4dtk4")]
+offset_left = 2.0
+offset_top = 395.0
+offset_right = 258.0
+offset_bottom = 645.0
+script = ExtResource("4_tl7a5")

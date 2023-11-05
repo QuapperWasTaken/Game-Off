@@ -22,5 +22,6 @@ func _process(delta):
 	
 func _on_hitbox_body_entered(body):
 	if body == target:
-		target.health -= damage
+		target.health -= damage + $"/root/main/Tower".damage_upgrades
+		print("enemy health: ", target.health)
 		queue_free()
