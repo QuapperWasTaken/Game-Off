@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdir3vcbqya5u"]
+[gd_scene load_steps=5 format=3 uid="uid://bdir3vcbqya5u"]
 
 [ext_resource type="Texture2D" uid="uid://o61c0bg81tr3" path="res://Assets/Art/Enemies/Chicken.png" id="1_hejlv"]
 [ext_resource type="Script" path="res://enemy.gd" id="2_udqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fk25w"]
 size = Vector2(400, 360)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh6i3"]
+size = Vector2(460, 430)
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
@@ -16,3 +19,10 @@ texture = ExtResource("1_hejlv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9.53674e-06, -9.53674e-06)
 shape = SubResource("RectangleShape2D_fk25w")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(-1.90735e-05, 4.99996)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yh6i3")

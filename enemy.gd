@@ -4,13 +4,15 @@ extends CharacterBody2D
 var health = 10
 var type = "enemy"
 var currency_drop = 1
+var damage = 1
+var attack_counter = 0
+var attack_rate = 30
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	attack_counter += 1
 	if global_position.x >= $"/root/main/Tower".global_position.x:
 		position.x -= speed
 	else:
@@ -19,5 +21,12 @@ func _process(delta):
 		position.y -= speed
 	else:
 		position.y += speed
+		
 	if health <= 0:
 		queue_free()
+	else:
+		if $"AttackRange".overlaps_area($"/root/main/Tower/TowerHitbox") and attack_counter >= attack_rate:
+			$"/root/main/Tower".health -= damage
+			attack_counter = 0
+			print("tower health: ", $"/root/main/Tower".health)
+	

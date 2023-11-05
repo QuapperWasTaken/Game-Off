@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bef5gekxmt5eb"]
+[gd_scene load_steps=6 format=3 uid="uid://bef5gekxmt5eb"]
 
 [ext_resource type="Texture2D" uid="uid://chuyfheujtyqs" path="res://Assets/Art/Tower.png" id="1_lmgl3"]
 [ext_resource type="Script" path="res://tower.gd" id="2_4glmu"]
@@ -8,6 +8,9 @@ size = Vector2(528, 440)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uemc3"]
 radius = 1104.01
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41xas"]
+size = Vector2(532, 440)
 
 [node name="Tower" type="StaticBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -20,13 +23,19 @@ texture = ExtResource("1_lmgl3")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(260, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TowerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="TowerHitbox"]
 shape = SubResource("RectangleShape2D_qb3rr")
 
 [node name="TowerRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerRange"]
 shape = SubResource("CircleShape2D_uemc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_41xas")
 
 [connection signal="body_entered" from="TowerRange" to="." method="_on_tower_range_body_entered"]
 [connection signal="body_exited" from="TowerRange" to="." method="_on_tower_range_body_exited"]

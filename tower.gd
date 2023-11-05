@@ -6,14 +6,13 @@ var target_list = [] #enemies added to this list dynamically
 var type = "tower"
 var currency = 0
 var damage_upgrades = 0
+var health = 10
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	position.x = ProjectSettings.get_setting("display/window/size/viewport_width") / 2
 	position.y = ProjectSettings.get_setting("display/window/size/viewport_height") / 2
 	#centers the tower on screen
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	fire_counter += 1 #counts up to shoot
 	
@@ -22,6 +21,9 @@ func _process(delta):
 		projectile_1.target = target_list[0] #sets projectile_1's target to earliest entry
 		add_child(projectile_1) #adds projectile
 		fire_counter = 0 #resets counter
+	
+	if health <= 0:
+		print("you lose")
 	
 func _on_tower_range_body_entered(body):
 	if body.type == "enemy":
